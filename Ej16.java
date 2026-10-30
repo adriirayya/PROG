@@ -1,13 +1,16 @@
 public class Ej16 {
     public static void main(String[] args) {
-        boolean mantenimiento = true;
+        int acum = 0;
+        String strAcum = "";
+        for(int i =1; i <= 50; i++){
+            if(i==1){
+            strAcum = strAcum + i;
+            }else{
+               strAcum = strAcum +  " + " + i; 
 
-        if (mantenimiento) {
-            System.out.println("El sistema está en mantenimiento.");
-        }
-
-        if (!mantenimiento) {
-            System.out.println("El sistema no está en mantenimiento.");
+            }
+            
+            acum += i;
         }
     }
 }

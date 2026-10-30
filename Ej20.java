@@ -1,27 +1,29 @@
+
 import java.util.Scanner;
 
 public class Ej20 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        
+    
+    Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Introduce una cadena (start, stop, status): ");
-        String comando = scanner.nextLine();
+    int pares = 0;
+    int impares = 0;
 
-        switch (comando) {
-            case "start":
-                System.out.println("Iniciando sistema.");
-                break;
-            case "stop":
-                System.out.println("Deteniendo sistema.");
-                break;
-            case "status":
-                System.out.println("Mostrando estado del sistema.");
-                break;
-            default:
-                System.out.println("Comando no válido.");
-                break;
+     for (int i = 0; i < 12; i++) {
+
+        System.out.print("Introduce un entero: ");
+        int numero = scanner.nextInt();
+
+        if (numero % 2 == 0) {
+            pares++;
+        } else {
+            impares++;
         }
-
-        scanner.close();
-    }
+            
+     }
+     System.out.println("Pares: " + pares);
+     System.out.println("Impares: " + impares);
+     
+}
 }

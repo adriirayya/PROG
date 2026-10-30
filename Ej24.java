@@ -1,19 +1,29 @@
+
+import java.util.Scanner;
+
 public class Ej24 {
     public static void main(String[] args) {
-        int opcion = 2;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Introduce un maximo: ");
+        int maximo = Integer.parseInt(scanner.nextLine());
+        System.out.println("Introduce un minimo: ");
+        int minimo = Integer.parseInt(scanner.nextLine());
 
-        String resultado = switch (opcion) {
-            case 1 -> {
-                System.out.println("Opción 1 seleccionada.");
-                yield "Primera opción";
-            }
-            case 2 -> {
-                System.out.println("Opción 2 seleccionada.");
-                yield "Segunda opción";
-            }
-            default -> "Opción no válida";
-        };
+        for (int i = 0; i < 8; i++) {
+            System.out.print("Introduce un número: ");
+            int numero = scanner.nextInt();
 
-        System.out.println(resultado);
+            if (numero > maximo) {
+                maximo = numero;
+            }
+            if (numero < minimo) {
+                minimo = numero;
+            }
+        }
+
+        System.out.println("Máximo: " + maximo);
+        System.out.println("Mínimo: " + minimo);
+
+        scanner.close();
     }
 }

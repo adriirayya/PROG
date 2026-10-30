@@ -1,22 +1,27 @@
+
 import java.util.Scanner;
 
 public class Ej26 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Introduce tu edad: ");
-        int edad = scanner.nextInt();
+        System.out.print("Base: ");
+        int base = Integer.parseInt(scanner.nextLine());
 
-        if (edad < 0) {
-            System.out.println("La edad introducida no es válida.");
-        } else if (edad >= 0 && edad <= 3) {
-            System.out.println("Precio: 0 €");
-        } else if (edad >= 4 && edad <= 15) {
-            System.out.println("Precio: 4 €");
-        } else if (edad >= 16 && edad <= 64) {
-            System.out.println("Precio: 9 €");
+        System.out.print("Exponente no negativo: ");
+        int exponente = Integer.parseInt(scanner.nextLine());
+
+        if (exponente < 0) {
+            System.out.println("El exponente debe ser no negativo.");
         } else {
-            System.out.println("Precio: 5 €");
+            long resultado = 1;
+
+            for (int i = 0; i < exponente; i++) {
+                resultado *= base;
+                
+            }
+
+            System.out.println("Resultado: " + resultado);
         }
 
         scanner.close();

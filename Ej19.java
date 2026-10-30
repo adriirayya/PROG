@@ -1,23 +1,30 @@
+
 import java.util.Scanner;
+
 public class Ej19 {
     public static void main(String[] args) {
-        
-        Scanner scanner = new Scanner (System.in);
-        System.out.println("Elige tu turno horario");
-        char turno = scanner.nextLine().charAt(0);  
-        
-        switch (turno) {
-            case 'M': 
-                System.out.println("Turno mañana");
-                break;
+        Scanner scanner = new Scanner(System.in);
+        int positivos = 0;
+        int negativos = 0;
+        int ceros = 0;
 
-            case 'T':
-            System.out.println("Turno tarde");
-            break;
+        for (int i = 0; i < 10; i++) {
+            System.out.print("Introduce un entero: ");
+            int numero = scanner.nextInt();
 
-            case 'N':
-                System.out.println("Turno noche");
+            if (numero > 0) {
+                positivos++;
+            } else if (numero < 0) {
+                negativos++;
+            } else {
+                ceros++;
+            }
+        }
 
-        } 
-    }    
+        System.out.println("Positivos: " + positivos);
+        System.out.println("Negativos: " + negativos);
+        System.out.println("Ceros: " + ceros);
+
+        scanner.close();
+    }
 }

@@ -3,19 +3,19 @@ import java.util.Scanner;
 public class Ej23 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Dime el numero minimo: ");
+        int minimo = Integer.parseInt(scanner.nextLine());
 
-        System.out.print("Introduce un número del 1 al 4: ");
-        int numero = scanner.nextInt();
+        for (int i = 0; i < 6; i++) {
+            System.out.print("Introduce un entero: ");
+            int numero = scanner.nextInt();
 
-        String estacion = switch (numero) {
-            case 1 -> "Primavera";
-            case 2 -> "Verano";
-            case 3 -> "Otoño";
-            case 4 -> "Invierno";
-            default -> "Número no válido";
-        };
+            if (numero < minimo) {
+                minimo = numero;
+            }
+        }
 
-        System.out.println("Estación: " + estacion);
+        System.out.println("El mínimo es: " + minimo);
         scanner.close();
     }
 }
